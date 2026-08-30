@@ -1,26 +1,78 @@
-@import "tailwindcss";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --bg-main: #fdfdfd;
+  --bg-sidebar: #e7e5d8;
+  --border-color: #d4d1be;
+  --accent-gold: #b5a76e;
+  --text-main: #515c43;
+  --text-muted: #8a8863;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+/* App Shell Layout */
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .layout-container {
+    flex-direction: row;
+  }
+
+  .content-wrapper {
+    margin-left: 240px; /* Space for fixed desktop sidebar */
+    width: calc(100% - 240px);
+  }
+}
+
+/* Page Level Layout */
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.heroBox {
+  width: 100%;
+  position: relative;
+  height: 350px;
+}
+
+.sectionBox {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 1200px;
+}
+
+@media (min-width: 768px) {
+  .heroBox {
+    height: 450px;
+  }
+
+  .sectionBox {
+    padding: 3rem;
+  }
 }
