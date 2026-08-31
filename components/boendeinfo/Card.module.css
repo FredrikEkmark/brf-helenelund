@@ -1,0 +1,70 @@
+.card {
+  display: block;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 1.125rem 1.25rem;
+}
+
+.linkCard {
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.2s, opacity 0.2s;
+}
+
+.linkCard:hover {
+  border-color: var(--accent-gold);
+  opacity: 0.9;
+}
+
+.icon {
+  display: block;
+  width: 22px;
+  height: 22px;
+  color: var(--accent-gold);
+  margin-bottom: 0.625rem;
+}
+
+.title {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-main);
+  margin-bottom: 0.3rem;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.body p {
+  margin: 0;
+}
+
+.body ul,
+.body ol {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.body ul ul,
+.body ol ul,
+.body ol ol {
+  margin-top: 0.35rem;
+}
+
+.body a {
+  color: var(--accent-gold);
+  text-decoration: underline;
+}
+
+.body strong {
+  color: var(--text-main);
+}

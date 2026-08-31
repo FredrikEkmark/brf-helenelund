@@ -1,0 +1,46 @@
+.row {
+  display: flex;
+  gap: 0.875rem;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+.shortcut {
+  flex: 1;
+  min-width: 0;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent-gold);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.shortcut:hover {
+  opacity: 0.85;
+}
+
+.icon {
+  width: 22%;
+  height: 22%;
+  color: var(--text-main);
+}
+
+.label {
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--text-main);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .row {
+    padding: 1.5rem 3rem 3rem;
+    gap: 1.25rem;
+  }
+}

@@ -3,46 +3,39 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { IconHomeEco } from '@tabler/icons-react';
 import styles from './Navbar.module.css';
+
+const navLinks = [
+  { label: 'START', href: '/' },
+  { label: 'BOENDEINFO', href: '/boendeinfo' },
+  { label: 'FÖR MÄKLARE', href: '/maklare' },
+  { label: 'KONTAKT', href: '/kontakt' },
+  { label: 'DOKUMENT', href: '/dokument' },
+];
+
+function isLinkActive(pathname: string, href: string) {
+  const normalized = pathname === '/' ? '/' : pathname.replace(/\/$/, '');
+  if (href === '/') return normalized === '/';
+  return normalized === href || normalized.startsWith(`${href}/`);
+}
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-
-  const navLinks = [
-    { label: 'START', href: '/' },
-    { label: 'BOENDEINFO', href: '/boendeinfo' },
-    { label: 'FÖR MÄKLARE', href: '/maklare' },
-    { label: 'KONTAKT', href: '/kontakt' },
-    { label: 'DOKUMENT', href: '/dokument' },
-  ];
 
   return (
     <>
       <header className={styles.sidebar}>
         {/* Logo Section */}
         <div className={styles.logoContainer}>
-          <div className={styles.logoIcon}>
-            <svg 
-              width="24" 
-              height="24" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
-              strokeLinejoin="round"
-            >
-              <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-              <polyline points="9 22 9 12 15 12 15 22"/>
-            </svg>
-          </div>
+          <IconHomeEco className={styles.logoIcon} size={26} stroke={1.75} />
           <span className={styles.logoText}>Brf Helenelund</span>
         </div>
 
         {/* Mobile Hamburger Toggle */}
-        <button 
-          className={styles.toggleButton} 
+        <button
+          className={styles.toggleButton}
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle navigation menu"
         >
@@ -60,7 +53,7 @@ export default function Navbar() {
         {/* Desktop Navigation Links */}
         <nav className={styles.desktopNav}>
           {navLinks.map((link) => {
-            const isActive = pathname === link.href;
+            const isActive = isLinkActive(pathname, link.href);
             return (
               <Link
                 key={link.label}
@@ -78,7 +71,7 @@ export default function Navbar() {
       {isOpen && (
         <nav className={styles.mobileNav}>
           {navLinks.map((link) => {
-            const isActive = pathname === link.href;
+            const isActive = isLinkActive(pathname, link.href);
             return (
               <Link
                 key={link.label}
