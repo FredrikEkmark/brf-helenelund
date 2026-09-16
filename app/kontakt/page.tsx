@@ -1,13 +1,11 @@
-"use client"
-
-import { useState, useEffect } from 'react';
+// Migrated from https://www.grusgropen.se/kontakt-felanmalan/
+import ContactGrid from '@/components/kontakt/ContactGrid';
 
 export default function Kontakt() {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
-   <main>
+    <>
       <h1>Kontakt</h1>
-    </main>
+      <ContactGrid />
+    </>
   );
 }

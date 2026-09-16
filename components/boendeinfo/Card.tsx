@@ -4,20 +4,29 @@ import styles from './Card.module.css';
 
 export default function Card({
   title,
+  subtitle,
+  eyebrow,
+  value,
   href,
   icon: Icon,
   children,
 }: {
   title?: string;
+  subtitle?: string;
+  eyebrow?: string;
+  value?: string;
   href?: string;
   icon?: ComponentType<{ className?: string; stroke?: number }>;
-  children: ReactNode;
+  children?: ReactNode;
 }) {
   const content = (
     <>
       {Icon && <Icon className={styles.icon} stroke={1.5} />}
+      {eyebrow && <p className={styles.eyebrow}>{eyebrow}</p>}
       {title && <h3 className={styles.title}>{title}</h3>}
-      <div className={styles.body}>{children}</div>
+      {value && <p className={styles.value}>{value}</p>}
+      {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
+      {children && <div className={styles.body}>{children}</div>}
     </>
   );
 

@@ -9,7 +9,7 @@ import styles from './IconShortcuts.module.css';
 
 const shortcuts = [
   { Icon: IconWashMachine, label: 'Boka tvätt', href: '/boendeinfo/boka-tvattstuga' },
-  { Icon: IconTools, label: 'Felanmälan', href: '/kontakt' },
+  { Icon: IconTools, label: 'Felanmälan', href: '/kontakt/felanmalan' },
   {
     Icon: IconListCheck,
     label: 'Regler',

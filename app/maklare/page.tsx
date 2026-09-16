@@ -1,13 +1,13 @@
-"use client"
+// Migrated from https://www.grusgropen.se/faq/
+import Maklare from '@/components/maklare/Maklare';
 
-import { useState, useEffect } from 'react';
-
-export default function Maklare() {
-  const [isOpen, setIsOpen] = useState(false);
-
+export default function MaklarePage() {
   return (
-   <main>
-      <h1>För Mäklare</h1>
+    <main className="pageContainer">
+      <div className="sectionBox">
+        <h1>För mäklare</h1>
+        <Maklare />
+      </div>
     </main>
   );
 }

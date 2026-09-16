@@ -15,7 +15,7 @@ export default function Bredband() {
       </p>
       <p>
         Kontaktuppgifter hittar du på sidan för{' '}
-        <Link href="/kontakt">felanmälningar</Link>.
+        <Link href="/kontakt/felanmalan">felanmälningar</Link>.
       </p>
     </Card>
   );

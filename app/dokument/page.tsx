@@ -1,13 +1,13 @@
-"use client"
+// Migrated from https://www.grusgropen.se/boende/dokument/
+import Dokument from '@/components/dokument/Dokument';
 
-import { useState, useEffect } from 'react';
-
-export default function Dokument() {
-  const [isOpen, setIsOpen] = useState(false);
-
+export default function DokumentPage() {
   return (
-   <main>
-      <h1>Dokument</h1>
+    <main className="pageContainer">
+      <div className="sectionBox">
+        <h1>Dokument</h1>
+        <Dokument />
+      </div>
     </main>
   );
 }
